@@ -1,6 +1,6 @@
 name: qcmb-training ci
 
-on: [push, merge_request]
+on: [push, pull_request]
 
 jobs:
   build:
