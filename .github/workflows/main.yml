@@ -1,8 +1,6 @@
 name: qcmb-training ci
 
-on:
-	pull_request:
-		branches: [ master ]
+on: [push, merge_request]
 
 jobs:
 	build:
