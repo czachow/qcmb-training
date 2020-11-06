@@ -3,17 +3,19 @@ name: qcmb-training ci
 on: [push, merge_request]
 
 jobs:
+
 	build:
 		runs-on: ubuntu-latest
 		
-	steps:
-		- uses: actions/checkout@v2
-		- name: Install Dependencies
-		- run: |
-				python -m pip install --upgrade pip
-				pip install -r tools/requirements.txt
-				
-		- name: Test Notebooks
-		- run: |
-			pip install -r tools/requirements-dev.txt
-			for nb in $(find /content/ -name '*.ipynb'); do jupyter nbconvert --to notebook --execute $nb; done
+		steps:
+			- uses: actions/checkout@v2
+
+			- name: Install Dependencies
+			- run: |
+					python -m pip install --upgrade pip
+					pip install -r tools/requirements.txt
+					
+			- name: Test Notebooks
+			- run: |
+				pip install -r tools/requirements-dev.txt
+				for nb in $(find /content/ -name '*.ipynb'); do jupyter nbconvert --to notebook --execute $nb; done
