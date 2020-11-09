@@ -25,4 +25,4 @@ jobs:
       - name: Test Notebooks
         run: |
           pip install -r tools/requirements-dev.txt
-          for nb in $(find /content/ -name '*.ipynb'); do jupyter nbconvert --to notebook --execute $nb; done
+          for nb in $(find content/ -name '*.ipynb'); do jupyter nbconvert --to notebook --execute $nb; done
