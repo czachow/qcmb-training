@@ -1,6 +1,5 @@
 qiskit
 jupyter
-#git+https://github.com/qiskit-community/qiskit-textbook.git#subdirectory=qiskit-textbook-src
-numexpr
-#re
+#git+https://github.com/qiskit-community/qiskit-textbook.git#subdirectory=qiskit-textbook-src # funktioniert so nicht
+#numexpr # ohne qiskit-textbook vermutlich nicht notwendig
 
