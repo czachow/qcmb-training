@@ -1,0 +1,12 @@
+name: qcmb-training
+dependencies:
+    - python=3.7.9
+    - pip
+    - jupyter
+    - nbconvert
+    - numpy
+    - matplotlib
+    - pandas
+    - pip:
+        - qiskit[visualization] == 0.23.0
+
