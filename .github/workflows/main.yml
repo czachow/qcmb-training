@@ -2,27 +2,28 @@ name: qcmb-training ci
 
 on: [push, pull_request]
 
+env:
+   CONDA_ENV: qcmb-training
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.7]
-    
+    container:
+        image: continuumio/miniconda3
+        
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with: 
-            python-version: ${{ matrix.python-version }}
-
-      - name: Install Dependencies
+        
+      # Install the Environment 
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r tools/requirements.txt
-          
-      - name: Test Notebooks
+          conda env create -n $CONDA_ENV -f environment.yml
+     
+      # Test Files
+      - name: "Test Notebooks"
         run: |
-          pip install -r tools/requirements-dev.txt
-          for nb in $(find content/ -name '*.ipynb'); do jupyter nbconvert --to notebook --execute $nb; done
+          for file in ./content/*.ipynb
+          do 
+            conda run -n $CONDA_ENV jupyter nbconvert --to notebook --execute $file
+          done
