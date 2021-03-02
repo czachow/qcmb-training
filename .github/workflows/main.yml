@@ -1,13 +1,17 @@
 name: qcmb-training ci
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 env:
    CONDA_ENV: qcmb-training
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container:
         image: continuumio/miniconda3
         
@@ -23,7 +27,9 @@ jobs:
       # Test Files
       - name: "Test Notebooks"
         run: |
+          set +e
           for file in ./content/*.ipynb
           do 
-            conda run -n $CONDA_ENV jupyter nbconvert --to notebook --execute $file
+            conda run -n $CONDA_ENV jupyter nbconvert --ExecutePreprocessor.kernel_name=python3 --to notebook --execute $file
           done
+          set -e
