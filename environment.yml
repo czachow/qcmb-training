@@ -1,6 +1,4 @@
 name: qcmb-training
-channels:
-    - conda-forge
 dependencies:
     - python=3.8.*
     - pip
@@ -11,4 +9,4 @@ dependencies:
     - pandas
     - seaborn
     - pip:
-        - qiskit[visualization] == 0.23.5
+        - qiskit[visualization] == 0.24.0
