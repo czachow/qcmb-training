@@ -10,7 +10,25 @@ Das Tutorial kann sowohl über Google Colab genutzt werden, als auch über eine 
 
 ### Google Colab
 
-TODO
+Google Colab wird innerhalb des Workshops dazu verwendet die Notebooks bereitzustellen und das Material zu nutzen. Um das Material dort abzuspeichern und damit zugänglich zu machen, verfährt man wie folgt.
+
+1. Öffnen Sie ein neues leeres Notebook. 
+
+2. Binden Sie ihr Google Drive in die aktuelle Instanz ein. 
+
+```
+from google.colab import drive
+drive.mount("/content/gdrive")
+```
+
+3. Kopieren Sie das Material von der Github Website
+
+```
+! cd /content/gdrive/MyDrive/
+! git clone https://github.com/sva-qc-lab/qcmb-training.git
+```
+
+4. Öffnen Sie das erste Notebook im Ordner "qcmb-training/content/01-Uebersicht-Einfuehrung.ipynb"
 
 ### Lokale Installation
 
