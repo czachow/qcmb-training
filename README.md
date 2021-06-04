@@ -57,3 +57,4 @@ conda activate qcmb-training
 ```
 jupyter notebook 
 ```
+
