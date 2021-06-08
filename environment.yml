@@ -10,3 +10,4 @@ dependencies:
     - seaborn
     - pip:
         - qiskit[visualization] == 0.24.0
+        - pylatexenc
