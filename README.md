@@ -30,7 +30,7 @@ Das Tutorial kann sowohl über die IBM Quantum Experience, Google Colab, als auc
 
 7. In der Übersicht werden nun alle Notebooks des Workshops angezeigt:
 
-8. Starten Sie das erste Notebook (./qcmb-training/content/00-Inhalt_Tools.ipynb)[./qcmb-training/content/00-Inhalt_Tools.ipynb]
+8. Starten Sie das erste Notebook (./content/00-Inhalt_Tools.ipynb)[./content/00-Inhalt_Tools.ipynb]
 
 ### Google Colab
 
