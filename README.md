@@ -8,55 +8,37 @@ Basierend auf dem Material des IBM [Qiskit-Textbook](https://github.com/qiskit-c
 
 ## Einrichtung
 
-Das Tutorial kann sowohl über die IBM Quantum Experience, Google Colab, als auch über eine lokale Installation genutzt werden. Wir empfehlen die Nutzung der IBM Quantum Experience für das Training, da die Schulung vollständig auf die Umgebung ausgelegt wurde.
+Das Tutorial kann sowohl über die IBM Quantum Experience und über eine lokale Installation genutzt werden. Wir empfehlen die Nutzung der IBM Quantum Experience für das Training, da die Schulung vollständig auf die Umgebung ausgelegt wurde.
 
 ### IBM Quantum Experience
 
-1. Öffnen Sie die IBM Quantum Experience unter https://quantum-computing.ibm.com/ und melden Sie sich an. Falls Sie noch keinen IBM Account besitzen, können Sie in diesem Schritt einen solchen erstellen.
+1. Öffnen Sie die IBM Quantum Experience unter [https://quantum-computing.ibm.com/](https://quantum-computing.ibm.com/) und melden Sie sich an. Falls Sie noch keinen IBM Account besitzen, können Sie in diesem Schritt einen solchen erstellen.
 
-2. Sobald Sie sich eingeloggt haben, wechseln Sie das Quantum Lab durch Drücken auf den Button in der linken Navigationsleiste: 
+2. Sobald Sie sich eingeloggt haben, wechseln Sie in den Bereich **Quantum Lab** durch Drücken auf den entsprechenden Button.
 
-3. Erstellen Sie ein neues (leeres) Notebook durch Drücken auf den "New Notebook" Button.
+3. Starten Sie den Jupyter Server durch Drücken auf den Button "Lauch Server".
 
-3. Kopieren Sie die folgenden Instruktionen in das neue Notebook in eine leere Zelle.
+4. Erstellen Sie ein neues (leeres) Notebook durch Drücken auf den Button "New".
+
+5. Wählen Sie anschließend im zentralen Feld in der Kategorie "Notebook" die Version "Qiskit 0.xx.xx (ipykernel)".
+
+6. Kopieren Sie die folgenden Instruktionen in das neue Notebook in eine leere Zelle.
 
 ```
 !rm -rf qcmb-training && git clone https://github.com/czachow/qcmb-training.git
 ```
 
-5. Führen Sie die Zelle durch Drücken der Kombination Shift+Enter aus. Nun werden die Instruktionen ausgeführt und nach einem Moment das Ergebnis dargestellt. Nach erfolgreicher Durchführung erscheint die Zeile Updating files: 100%, done.
+7. Führen Sie die Zelle durch Drücken der Kombination Shift+Enter aus. Nun werden die Instruktionen ausgeführt und nach einem Moment das Ergebnis dargestellt. Nach erfolgreicher Durchführung erscheint die Zeile Updating files: 100%, done.
 
-6. Nachdem alle Instruktionen erfolgreich durchgeführt wurden, können Sie nun zurück zum Quantum Lab gehen. Dazu drücken Sie den Button Quantum Lab. 
+8. Nachdem alle Instruktionen erfolgreich durchgeführt wurden, können Sie nun zurück zum Quantum Lab gehen. Dazu drücken Sie den Button Quantum Lab. 
 
-7. In der Übersicht werden nun alle Notebooks des Workshops angezeigt:
+9. In der Übersicht werden nun alle Notebooks des Workshops angezeigt:
 
-8. Starten Sie das erste Notebook (./content/00-Inhalt_Tools.ipynb)[./content/00-Inhalt_Tools.ipynb]
-
-### Google Colab
-
-Google Colab wird innerhalb des Workshops dazu verwendet die Notebooks bereitzustellen und das Material zu nutzen. Um das Material dort abzuspeichern und damit zugänglich zu machen, verfährt man wie folgt.
-
-1. Öffnen Sie ein neues leeres Notebook. 
-
-2. Binden Sie ihr Google Drive in die aktuelle Instanz ein. 
-
-```
-from google.colab import drive
-drive.mount("/content/gdrive")
-```
-
-3. Kopieren Sie das Material von der Github Website
-
-```
-! cd /content/gdrive/MyDrive/
-! git clone https://github.com/czachow/qcmb-training.git
-```
-
-4. Öffnen Sie das erste Notebook im Ordner "qcmb-training/content/01-Uebersicht-Einfuehrung.ipynb"
+10. Starten Sie das erste Notebook [./content/00-Inhalt_Tools.ipynb](./content/00-Inhalt_Tools.ipynb)
 
 ### Lokale Installation
 
-1. Für eine lokale Installation wird die Python Distribution Anaconda benötigt. Diese kann kostenlos unter folgender URL heruntergelanden werden [https://www.anaconda.com/products/individual](https://www.anaconda.com/products/individual). Ihr liegt eine separate Installationsanleitung bei.
+1. Für eine lokale Installation wird eine Python Distribution benötigt. Wir empfehlen die Benutzung des kostenlosen Anaconda-Nachbaus namens conda-forge. Diese kann kostenlos unter folgender URL heruntergelanden werden [https://github.com/conda-forge/miniforge](https://github.com/conda-forge/miniforge). Dort finden Sie auch eine separate Installationsanleitung.
 2. Das Material kann aus diesem Repository runtergeladen werden. Dazu bietet sich entweder die Software `git` an oder der Direktlink auf der Seite. Falls die Methode des Direktlinks verwendet wird muss das entsprechende ZIP-Archiv noch entpackt werden.
 3. Nun öffnen Sie das Terminal bzw. die Kommandozeile und wechseln in den Ordner in welchem das Material abgelegt wurde.
 
