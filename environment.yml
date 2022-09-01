@@ -1,6 +1,6 @@
 name: qcmb-training
 dependencies:
-    - python=3.8.*
+    - python=3.9.*
     - pip
     - jupyter
     - nbconvert
@@ -9,5 +9,5 @@ dependencies:
     - pandas
     - seaborn
     - pip:
-        - qiskit[visualization] == 0.24.0
+        - qiskit[visualization] == 0.34.2
         - pylatexenc
