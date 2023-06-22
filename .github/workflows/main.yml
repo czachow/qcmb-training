@@ -40,3 +40,8 @@ jobs:
           do 
             conda run -n $CONDA_ENV jupyter nbconvert --ExecutePreprocessor.kernel_name=python3 --to notebook --execute $file
           done
+          for file in ./solutions/*.ipynb
+          do 
+            conda run -n $CONDA_ENV jupyter nbconvert --ExecutePreprocessor.kernel_name=python3 --to notebook --execute $file
+          done
+
