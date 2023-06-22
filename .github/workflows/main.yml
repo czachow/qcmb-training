@@ -27,7 +27,7 @@ jobs:
       # Test Files
       - name: "Test Notebooks"
         run: |
-          for file in ./{content, solutions}/*.ipynb
+          for file in ./content/*.ipynb ./solutions/*.ipynb
           do 
             conda run -n $CONDA_ENV jupyter nbconvert --ExecutePreprocessor.kernel_name=python3 --to notebook --execute $file
           done
