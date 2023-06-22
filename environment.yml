@@ -9,5 +9,5 @@ dependencies:
     - pandas
     - seaborn
     - pip:
-        - qiskit[visualization] == 0.34.2
+        - qiskit[visualization] == 0.43.1
         - pylatexenc
