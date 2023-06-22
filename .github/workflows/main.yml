@@ -23,25 +23,16 @@ jobs:
       - name: Install dependencies
         run: |
           conda env create -n $CONDA_ENV -f environment.yml
-
-      # Prepare IBMQ Account
-      - name: Prepare environment
-        run: |
-          mkdir -p ./.qiskit
-          echo "[ibmq]" >> ./.qiskit/qiskitrc
-          echo "token = ${{ secrets.IBMQ_TOKEN }}" >> ./.qiskit/qiskitrc
-          echo "url = https://auth.quantum-computing.ibm.com/api" >> ./.qiskit/qiskitrc
-          echo "verify = True" >> ./.qiskit/qiskitrc
      
       # Test Files
       - name: "Test Notebooks"
         run: |
-          for file in ./content/*.ipynb
+          for file in ./{content, solutions}/*.ipynb
           do 
             conda run -n $CONDA_ENV jupyter nbconvert --ExecutePreprocessor.kernel_name=python3 --to notebook --execute $file
           done
-          for file in ./solutions/*.ipynb
-          do 
-            conda run -n $CONDA_ENV jupyter nbconvert --ExecutePreprocessor.kernel_name=python3 --to notebook --execute $file
-          done
+        env:
+          QE_TOKEN: '${{ secrets.QE_TOKEN }}'
+          QE_URL: '${{ secrets.QE_URL }}'
+
 
